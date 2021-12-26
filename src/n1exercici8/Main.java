@@ -8,22 +8,18 @@ public class Main {
 
 
         LinkedHashMap<String, Integer> linkedHashMap = new LinkedHashMap<>();
-        orderLin
+        linkedHashMap.put("juan", 1);
+        linkedHashMap.put("albert", 2);
+        linkedHashMap.put("dani", 3);
+        linkedHashMap.put("maria", 4);
+
+        linkedHashMap.entrySet().iterator().forEachRemaining(System.out::println);
+
+        OrderingClass.orderLinkedHashMap(linkedHashMap);
+
+        linkedHashMap.entrySet().iterator().forEachRemaining(System.out::println);
     }
 
-    private static void orderLinkedHashMap(LinkedHashMap<String, Integer> linkedHashMap){
-        List<Map.Entry<String,Integer>> arrayList = new ArrayList<>(linkedHashMap.entrySet());
 
-        Collections.sort(arrayList, new NameComparator());
-    }
-
-    class NameComparator implements Comparator<Map.Entry<String, Integer>> {
-
-        // override the compare() method
-        @Override
-        public int compare(Map.Entry<String, Integer> o1, Map.Entry<String, Integer> o2) {
-            return o1.getKey().compareTo(o2.getKey());
-        }
-    }
 
 }
